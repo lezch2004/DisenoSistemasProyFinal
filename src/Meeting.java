@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Meeting {
@@ -7,10 +7,10 @@ public class Meeting {
     private List<String> participants; 
     private String topic; 
     private String place; 
-    private LocalDate startDate; 
-    private LocalDate endDate; 
+    private LocalDateTime startDate; 
+    private LocalDateTime endDate; 
 
-    public Meeting (String organizer, List<String> participants, String topic, String place, LocalDate startDate, LocalDate endDate){
+    public Meeting (String organizer, List<String> participants, String topic, String place, LocalDateTime startDate, LocalDateTime endDate){
         setOrganizer(organizer);
         setParticipants(participants);
         setTopic(topic);
@@ -51,27 +51,31 @@ public class Meeting {
         return place;
     }
 
-    public void setStartDate(LocalDate startDate){
+    public void setStartDate(LocalDateTime startDate){
         this.startDate = startDate; 
     }
 
-    public LocalDate getStartDate(){
+    public LocalDateTime getStartDate(){
         return startDate;
     }
 
-    public void setEndDate(LocalDate endDate){
+    public void setEndDate(LocalDateTime endDate){
         this.endDate = endDate; 
     }
 
-    public LocalDate getEndDate(){
+    public LocalDateTime getEndDate(){
         return endDate;
     }
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Organizador: " + organizer +
+           "\nInvitados: " + participants.toString() +
+           "\nTema: " + topic +
+           "\nLugar: " + place +
+           "\nInicio: " + startDate +
+           "\nFin: " + endDate;
+}
 }
 
 
