@@ -13,6 +13,7 @@ public class MartinClient {
 
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
+        scan.nextLine();
 
         while (choice > 2 || choice < 1){
             System.out.println("\nVALOR INVALIDO!");
@@ -20,6 +21,7 @@ public class MartinClient {
             System.out.println("1: CREAR REUNIÓN");
             System.out.println("2: MODIFICAR REUNIÓN");
             choice = scan.nextInt();
+            scan.nextLine();
         }
 
         switch (choice){
@@ -42,17 +44,19 @@ public class MartinClient {
         System.out.println("\nCREA UNA REUNIÓN!");
         System.out.println("\nINGRESA EL NÚMERO DE INVITADOS (1-4): ");
         int numParticipants = scan.nextInt(); 
+        scan.nextLine();
 
         while (numParticipants > 4  || numParticipants < 1){
             System.out.println("\nNÚMERO INVÁLIDO");
             System.out.println("\nINGRESA EL NÚMERO DE INVITADOS (1-4): ");
             numParticipants = scan.nextInt(); 
+            scan.nextLine();
         }
 
         List<String> participants = new ArrayList<>();
-        System.out.println("\nINGRESE EL NOMBRE DE CADA INVITADO (Nombre_Apellido)\n");
+        System.out.println("\nINGRESE EL NOMBRE DE CADA INVITADO (Nombre_Apellido)");
         for (int i = 1; i<=numParticipants; i++){
-            System.out.println("INVITADO " + i + ": ");
+            System.out.println("\nINVITADO " + i + ": ");
             String name = scan.nextLine();
             participants.add(name);
         }
